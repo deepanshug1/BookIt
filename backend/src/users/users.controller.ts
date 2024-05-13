@@ -6,8 +6,8 @@ import {
   Session,
   UseInterceptors,
 } from '@nestjs/common';
-import { SerializeInterceptor } from 'src/interceptors/serialize.interceptor';
-import { createUserDto } from 'src/users/dtos/create-user.dto';
+import { SerializeInterceptor } from '../interceptors/serialize.interceptor';
+import { createUserDto } from '../users/dtos/create-user.dto';
 import { AuthService } from './auth.service';
 import { currentUserDecorator } from './decorators/current-user.decorator';
 import { UserDto } from './dtos/user.dto';

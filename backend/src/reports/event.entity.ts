@@ -1,5 +1,4 @@
-import { User } from 'src/users/user.entity';
-import { Column, Entity, ManyToOne, ObjectId, ObjectIdColumn } from 'typeorm';
+import { Column, Entity, ObjectId, ObjectIdColumn } from 'typeorm';
 
 @Entity()
 export class Event {
@@ -26,6 +25,4 @@ export class Event {
 
   @Column()
   openBooking: boolean;
-
-
 }

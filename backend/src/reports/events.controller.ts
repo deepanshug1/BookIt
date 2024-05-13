@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Post, UseInterceptors } from '@nestjs/common';
-import { SerializeInterceptor } from 'src/interceptors/serialize.interceptor';
-import { currentUserDecorator } from 'src/users/decorators/current-user.decorator';
-import { User } from 'src/users/user.entity';
+import { SerializeInterceptor } from '../interceptors/serialize.interceptor';
+import { currentUserDecorator } from '../users/decorators/current-user.decorator';
+import { User } from '../users/user.entity';
 import { EventDto } from './dtos/event.dto';
 import { responseEventDto } from './dtos/response-event.dto';
 import { EventsService } from './events.service';
