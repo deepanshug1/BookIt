@@ -1,27 +1,30 @@
-import { Injectable, NestMiddleware } from '@nestjs/common';
-import { NextFunction, Request } from 'express';
-import { User } from '../user.entity';
-import { UsersService } from '../users.service';
+// cors.middleware.ts
 
-declare global {
-  namespace Express {
-    interface Request {
-      currentUser?: User;
-    }
-  }
-}
+import { Injectable, NestMiddleware } from '@nestjs/common';
+import { NextFunction, Request, Response } from 'express';
 
 @Injectable()
 export class currentUserMiddleware implements NestMiddleware {
-  constructor(private usersService: UsersService) {}
+  use(req: Request, res: Response, next: NextFunction) {
+    // Handle OPTIONS requests
+    if (req.method === 'OPTIONS') {
+      // Set CORS headers
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader(
+        'Access-Control-Allow-Methods',
+        'GET, POST, PUT, DELETE, OPTIONS',
+      );
+      res.setHeader(
+        'Access-Control-Allow-Headers',
+        'Content-Type, Authorization',
+      );
+      res.setHeader('Access-Control-Max-Age', '86400'); // 24 hours
 
-  async use(req: Request, res: Response, next: NextFunction) {
-    const userId = req.session.userId;
-    if (userId) {
-      const user = await this.usersService.findUser(userId);
-      req.currentUser = user;
+      // Respond to OPTIONS request with 200 status
+      res.sendStatus(200);
+    } else {
+      // Continue to the next middleware or route handler
+      next();
     }
-
-    next();
   }
 }
