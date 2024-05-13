@@ -7,8 +7,8 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { SerializeInterceptor } from '../interceptors/serialize.interceptor';
-import { currentUserDecorator } from 'src/users/decorators/current-user.decorator';
-import { User } from 'src/users/user.entity';
+import { currentUserDecorator } from '../users/decorators/current-user.decorator';
+import { User } from '../users/user.entity';
 import { BookingsService } from './bookings.service';
 import { BookingDto } from './dtos/booking.dto';
 import { responseBookingDto } from './dtos/response-booking.dto';
