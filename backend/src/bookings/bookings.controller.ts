@@ -6,7 +6,7 @@ import {
   Post,
   UseInterceptors,
 } from '@nestjs/common';
-import { SerializeInterceptor } from 'src/interceptors/serialize.interceptor';
+import { SerializeInterceptor } from '../interceptors/serialize.interceptor';
 import { currentUserDecorator } from 'src/users/decorators/current-user.decorator';
 import { User } from 'src/users/user.entity';
 import { BookingsService } from './bookings.service';
