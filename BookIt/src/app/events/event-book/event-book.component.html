@@ -1,0 +1,29 @@
+<router-outlet></router-outlet>
+<div class="det-container" [@divstate]="state">
+  <div class="det-image"><img src="{{ currEvent.imagePath }}" alt="" /></div>
+  <div class="det-content">
+    <div class="det-title">{{ currEvent.name }}</div>
+    <div class="det-desc">{{ currEvent.description }}</div>
+    <div class="det-lorem">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia repellat
+      in sed facilis dolor eveniet molestias, reprehenderit illum asperiores
+      nemo hic soluta odit sapiente consectetur nihil obcaecati quis, expedita
+      inventore. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+    <div class="det-date">Date: {{ currEvent.date }}</div>
+    <div class="det-location">Location: {{ currEvent.location }}</div>
+    <div class="det-book">
+      <p *ngIf="!currEvent.openBooking" class="notopen">
+        Not open for Booking yet!
+      </p>
+      <a
+        *ngIf="currEvent.openBooking"
+        class="but"
+        [disabled]="!currEvent.openBooking"
+        (click)="book(currEvent)"
+      >
+        Book Tickets
+      </a>
+    </div>
+  </div>
+</div>

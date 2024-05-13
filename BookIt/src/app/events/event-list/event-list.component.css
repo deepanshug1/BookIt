@@ -1,0 +1,38 @@
+.filters {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(50, 50, 50);
+  margin-bottom: 5rem;
+  padding: 1rem 0;
+  border-radius: 20px;
+}
+
+.filters {
+  color: #275dff;
+}
+
+.categ {
+  color: white;
+  cursor: pointer;
+}
+
+.categ:hover {
+  color: #275dff;
+}
+
+.cards {
+  grid-template-columns: auto auto auto;
+  display: grid;
+  row-gap: 4rem;
+  margin-bottom: 2rem;
+  justify-content: space-between;
+}
+
+.upcoming {
+  background-color: #275dff;
+  padding: 0.5rem 1rem;
+  max-width: max-content;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}

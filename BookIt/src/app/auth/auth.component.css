@@ -1,0 +1,21 @@
+* {
+  color: black;
+}
+
+.contain {
+  margin-top: 7.5rem;
+  padding: 6rem 0 12rem 0;
+  border-radius: 50px;
+  background-color: rgb(121, 187, 245);
+}
+h1 {
+  padding-bottom: 4rem;
+}
+
+.btn {
+  color: white;
+}
+
+input.ng-touched.ng-invalid {
+  border: solid 0.1rem red;
+}

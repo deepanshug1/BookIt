@@ -1,0 +1,9 @@
+<a [routerLink]="[index]" routerLinkActive="active">
+  <div class="card-container" [@divstate]="state">
+    <div class="card-img"><img src="{{ event.imagePath }}" alt="" /></div>
+    <div class="card-title">{{ event.name }}</div>
+    <div class="card-desc">{{ event.description }}</div>
+    <div class="card-date">{{ event.date }}</div>
+    <div class="card-location">{{ event.location }}</div>
+  </div>
+</a>

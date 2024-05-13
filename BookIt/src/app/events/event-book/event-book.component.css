@@ -1,0 +1,58 @@
+.det-container {
+  display: flex;
+  margin: 5rem 0 7rem 0;
+  background-color: rgb(50, 50, 50);
+  background-color: rgb(50, 50, 50);
+  box-shadow: 5px 5px rgb(0, 0, 0);
+}
+
+.det-image img {
+  width: 50rem;
+  border-radius: 5px;
+}
+
+.det-content {
+  display: flex;
+  text-align: justify;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0.5rem 4rem 1rem 4rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.det-title {
+  font-size: 3rem;
+  font-weight: 700;
+  background: -webkit-linear-gradient(#00d9ff, #ffee00);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.det-book {
+  display: flex;
+  justify-content: end;
+}
+
+.but {
+  text-align: center;
+  width: 12rem;
+  background-color: #275dff;
+  color: white;
+  padding: 0.2rem 0;
+  border: 0.1rem solid white;
+  transition: all 0.5s ease-in-out;
+}
+
+.but:hover {
+  background-color: white;
+  color: #275dff;
+  border: 0.1rem solid #275dff;
+}
+
+.notopen {
+  background-color: grey;
+  padding: 0.5rem 1rem;
+}

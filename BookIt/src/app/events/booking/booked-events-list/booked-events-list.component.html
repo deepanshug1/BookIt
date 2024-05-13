@@ -1,0 +1,9 @@
+<h1>Your Bookings:</h1>
+<h3 *ngIf="bookings.length == 0">No Bookings Yet...</h3>
+<div class="container">
+  <app-booked-event
+    *ngFor="let booking of bookings; let i = index"
+    [booking]="booking"
+    [index]="i"
+  ></app-booked-event>
+</div>

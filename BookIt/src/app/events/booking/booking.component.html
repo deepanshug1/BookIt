@@ -1,0 +1,72 @@
+<div class="overall-cont">
+  <h1>Book Tickets</h1>
+
+  <div class="det-container">
+    <div class="heading">Event Details:</div>
+    <div class="det-grid">
+      <div class="det-name">Name: {{ selectedEvent.name }}</div>
+      <div class="det-categ">Category: {{ selectedEvent.category }}</div>
+      <div class="det-date">Date: {{ selectedEvent.date }}</div>
+      <div class="det-location">Location: {{ selectedEvent.location }}</div>
+    </div>
+  </div>
+
+  <div class="form-container">
+    <h2>Booking Details</h2>
+    <form (ngSubmit)="onBook(f)" #f="ngForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          ngModel
+          name="name"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          [(ngModel)]="email"
+          name="email"
+          required
+          email
+          disabled
+        />
+      </div>
+      <div class="form-group">
+        <label for="tickets">No. of Tickets:</label>
+        <input
+          type="number"
+          id="tickets"
+          class="form-control"
+          [(ngModel)]="ticks"
+          name="tickets"
+          required
+          min="0"
+          max="10"
+        />
+      </div>
+      <p class="cost" *ngIf="ticks <= 10">Cost:{{ 500 * ticks }}</p>
+      <p class="warning" *ngIf="ticks > 10">Maximum 10 tickets allowed!</p>
+      <div class="form-group">
+        <button
+          *ngIf="!submitted"
+          [disabled]="!f.valid || submitted"
+          class="btn btn-primary"
+          type="submit"
+        >
+          Book
+        </button>
+        <p class="thanks" *ngIf="submitted">
+          Thankyou for Booking, Your tickets have been sent to your provided
+          email address! Redirecting to Home Page...
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

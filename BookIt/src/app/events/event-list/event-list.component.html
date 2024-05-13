@@ -1,0 +1,15 @@
+<div class="filters">
+  <span class="categ" (click)="onSelect('Cultural')">Cultural</span>/
+  <span class="categ" (click)="onSelect('Tech')">Tech</span>/
+  <span class="categ" (click)="onSelect('')">All</span>\
+  <span class="categ" (click)="onSelect('Food')">Food</span>\
+  <span class="categ" (click)="onSelect('Conference')">Conference</span>
+</div>
+<div class="upcoming" (click)="upcoming()">Upcoming</div>
+<div class="cards">
+  <app-event-details
+    *ngFor="let eventEl of events; let i = index"
+    [event]="eventEl"
+    [index]="i"
+  ></app-event-details>
+</div>
