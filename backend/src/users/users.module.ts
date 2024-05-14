@@ -12,7 +12,10 @@ import { UsersService } from './users.service';
   controllers: [UsersController],
 })
 export class UsersModule {
-  configure(consumer: MiddlewareConsumer) {
-    consumer.apply(currentUserMiddleware).forRoutes('*');
+ configure(consumer: MiddlewareConsumer) {
+    consumer.apply(currentUserMiddleware).forRoutes({
+      path: '*',
+      method: RequestMethod.ALL,
+    });
   }
 }
