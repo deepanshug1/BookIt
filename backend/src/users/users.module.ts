@@ -1,4 +1,4 @@
-import { MiddlewareConsumer, Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, RequestMethod } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthService } from './auth.service';
 import { currentUserMiddleware } from './middleware/current-user.middleware';
@@ -12,7 +12,7 @@ import { UsersService } from './users.service';
   controllers: [UsersController],
 })
 export class UsersModule {
- configure(consumer: MiddlewareConsumer) {
+  configure(consumer: MiddlewareConsumer) {
     consumer.apply(currentUserMiddleware).forRoutes({
       path: '*',
       method: RequestMethod.ALL,
