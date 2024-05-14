@@ -30,40 +30,15 @@ export class AuthService {
 
   Login(email: string, password: string) {
     return this.http
-      .post<response>('http://localhost:3000/auth/signin', { email, password })
+      .post<response>('http://localhost:3000/auth/signin', {
+        email,
+        password,
+      })
       .pipe(
         catchError(this.errorHandler),
         tap((res) => this.authHandler(res.email))
       );
   }
-
-  // Signup(email: string, password: string) {
-  //   return this.http
-  //     .post<AuthResponse>(
-  //       'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDSn6QCI3ba9fFkxD71ZrrmzIuZ69t4wqY',
-  //       { email, password, returnSecureToken: true }
-  //     )
-  //     .pipe(
-  //       catchError(this.errorHandler),
-  //       tap((res) =>
-  //         this.authHandler(res.email, res.localId, res.idToken, +res.expiresIn)
-  //       )
-  //     );
-  // }
-
-  // Login(email: string, password: string) {
-  //   return this.http
-  //     .post<AuthResponse>(
-  //       'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDSn6QCI3ba9fFkxD71ZrrmzIuZ69t4wqY',
-  //       { email, password, returnSecureToken: true }
-  //     )
-  //     .pipe(
-  //       catchError(this.errorHandler),
-  //       tap((res) =>
-  //         this.authHandler(res.email, res.localId, res.idToken, +res.expiresIn)
-  //       )
-  //     );
-  // }
 
   Logout() {
     this.user.next(null);
